@@ -1,0 +1,186 @@
+body{
+	background-color: orange;
+}
+
+/*Clases Generales*/
+.contenedor{
+	width: 80%;
+	margin: 0 auto 20px auto;
+	outline: 1px solid black;
+	padding: 20px;
+}
+.title-main{
+	background-color: #eb7f00;
+	color: #ffffff;
+	border-bottom: 2px solid #ffffff;
+	padding: 5px;
+	font-weight: lighter;
+}
+.caja{
+	border: 1px solid #eb7f00;
+	padding: 10px;
+	margin-bottom: 30px;
+}
+
+/*Box Shadow*/
+#box-shadow{}
+#box-shadow .contenedor div.sombra-exterior{
+	box-shadow: 5px 5px 10px black, -5px -5px 10px red;
+}
+#box-shadow .contenedor div.sombra-interior{
+	box-shadow: inset 0px 0px 10px black;
+	/*transition: all 0.5s ease;*/
+}
+/*#box-shadow .contenedor div.sombra-interior:hover{
+	box-shadow: inset 1000px 0px 0px white;
+}*/
+
+#box-shadow .contenedor div p{
+	text-align: center;
+	color: #ffffff;
+	font-size: 24px;
+}
+
+/*Text Shadow*/
+
+#text-shadow{}
+#text-shadow .sombra-texto{}
+#text-shadow .sombra-texto p{
+	text-align: center;
+	color: #ffffff;
+	font-size: 32px;
+	text-transform: uppercase;
+	/*Solo para etiqueteas que soportan texto*/
+	text-shadow: 5px 5px 5px black;
+}
+
+/*transicion*/
+#transicion{}
+#transicion .transicion-caja{
+	background-color: rgba(255,255,255, 1);
+	/*transition: propiedad tiempo tipo-transicion (ease ease-in ease-out ease-in-out);*/
+	transition:all 1s ease-in;
+}
+#transicion .transicion-caja:hover{
+	background-color: rgba(255,44,0, 1);
+}
+#transicion .transicion-caja p{
+	text-align: center;
+	color: #000000;
+	font-size: 15px;
+	text-transform: uppercase;
+	transition: all 1s ease-in;
+}
+#transicion .transicion-caja p:hover{
+	color: #ffffff;
+	font-size: 30px;
+}
+
+/*Degradado*/
+#degradado{}
+#degradado .box-degradado{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+	background: #1e5799; /* Old browsers */
+	background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+}
+
+/*Animaciones*/
+
+@keyframes primerAnimacion{
+	/*from{
+		background-color: red;
+	}
+	to{
+		background-color: green;
+	}*/
+
+	0%{background-color: black;}
+	10%{background-color: green;}
+	20%{background-color: yellow;}
+	30%{background-color: red;}
+	40%{background-color: blue;}
+	50%{background-color: purple;}
+	60%{background-color: pink;}
+	70%{background-color: maroon;}
+	80%{background-color: peru;}
+	90%{background-color: black;}
+	100%{background-color: gray;}
+}
+
+#animacion{}
+#animacion .box-animacion{
+	animation-name: primerAnimacion;
+	animation-duration: 10s;
+	animation-delay: 1s;
+	animation-iteration-count: infinite;
+}
+
+/*Transform*/
+
+@keyframes cambioColor{
+	from{background-color: red;}
+	to{background-color: gray;}
+}
+
+#rotate{}
+#rotate .box-rotate{
+	transform: rotate(0deg);
+	transition: all 0.5s ease-in
+}
+#rotate .box-rotate:hover{
+	animation-name: cambioColor;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+
+	transform: rotate(60deg); /*Esto sirve para rotar cualquier tipo de elemento o etiqueta*/
+
+}
+
+#scale{}
+#scale .box-scale{	
+	transform: scale(1,1);
+}
+#scale .box-scale:hover{	
+	transform: scale(0.5,0.5);
+}
+
+
+/*Slider de imagenes con animaciones*/
+@keyframes slider{
+	0%{
+		background-image: url(../slider/1.jpg);
+	}
+	20%{
+		background-image: url(../slider/2.jpg);
+	}
+	40%{
+		background-image: url(../slider/3.jpg);
+	}
+	60%{
+		background-image: url(../slider/4.jpg);
+	}
+	80%{
+		background-image: url(../slider/5.png);
+	}
+	90%{
+		background-image: url(../slider/6.jpg);
+	}
+	100%{
+		background-image: url(../slider/1.jpg);
+	}
+}
+#ludvin{}
+#ludvin .box-slider{
+	background-size: cover;
+	background-position: center top;
+	
+	height: 490px;
+	
+	animation-name: slider;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+}
+
